@@ -49,10 +49,9 @@ body{
 }
 
 .portrait{
+  max-width: 340px;   /* keeps it reasonable on large screens */
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;       /* preserve original aspect ratio */
   border-radius: 4px;
 }
 
