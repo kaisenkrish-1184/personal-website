@@ -30,7 +30,7 @@ const projects = [
           {p.collaborators && <p class="collab">{p.collaborators}</p>}
 
           {p.links && (
-  <p class="linkWrap">
+  <div class="linkWrap">
     {p.links.map((link) => (
       <a
         class="paperLink"
@@ -41,7 +41,7 @@ const projects = [
         {link.text}
       </a>
     ))}
-  </p>
+  </div>
 )}
         </div>
 
@@ -92,14 +92,18 @@ const projects = [
     }
 
     .linkWrap {
-      margin: 2.5rem 0 0 0;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
 
     .paperLink {
+      font-size: 1.05rem;        /* smaller, academic */
+      font-weight: 600;
       color: #4f7de8;
-      font-weight: 700;
       text-decoration: underline;
-      font-size: 1.6rem;
+      line-height: 1.4;
     }
 
     .abstract {
