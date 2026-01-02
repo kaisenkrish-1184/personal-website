@@ -3,13 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = [
   {
-    title: "Hidden Beliefs and Return Predictability",
-    subtitle: "Replication + portfolio construction from institutional demand estimation",
-    collaborators: "",
-    linkText: "Working Paper",
-    linkHref: "https://example.com/working-paper", // ← external website
+    title: "Replication of Daniel Graves “What Lies Beneath Zero: Censoring, Demand Estimation, and Hidden Beliefs”",
+    subtitle: "Replication of empirical results from Graves' JMP + portfolio construction from Hidden Beliefs",
+    linkText: "Graves' Paper",
+    linkHref: "https://yale.app.box.com/s/vlmkafxglm89f4cwra9ecav9nniyukyw", // ← external website
     abstract:
-      "This project replicates the core empirical pipeline of a paper that estimates institutional investors’ unobserved demand for stocks they could have held but did not. Using CRSP, Compustat, and 13F holdings, I build a hidden-beliefs index (HBI), form characteristic-sorted portfolios, and evaluate abnormal performance using standard factor models. The goal is to assess whether information embedded in non-holdings predicts future returns.",
+      "This project replicates the core empirical pipeline of Graves (2025), which estimates institutional investors’ unobserved demand for stocks they could have held but chose not to. I construct the Hidden Beliefs Index (HBI) using CRSP, Compustat, and 13F holdings data, and form characteristic-sorted portfolios based on these inferred beliefs. I then evaluate portfolio performance using standard asset-pricing factor models. The results support the paper’s central finding that information embedded in institutional non-holdings is not fully incorporated into prices, giving rise to statistically significant abnormal returns.
+",
   },
 ];
 ---
@@ -34,8 +34,8 @@ const projects = [
 
         <div class="right">
           <p class="abstract">
-            <span class="abstractLabel">Abstract:</span> {p.abstract}
-          </p>
+<span class="abstractLabel">Project Summary:</span> {p.abstract}          
+</p>
         </div>
       </article>
     ))}
