@@ -1,24 +1,114 @@
 ---
-import "../styles/site.css";
-const name = "Your Name";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "Hidden Beliefs and Return Predictability",
+    subtitle: "Replication + portfolio construction from institutional demand estimation",
+    collaborators: "with (optional) Collaborator Name",
+    linkText: "Working Paper",
+    linkHref: "/papers/hidden-beliefs.pdf", // put your pdf in /public/papers/
+    abstract:
+      "This project replicates the core empirical pipeline of a paper that estimates institutional investors’ unobserved demand for stocks they could have held but did not. Using CRSP, Compustat, and 13F holdings, I build a hidden-beliefs index (HBI), form characteristic-sorted portfolios, and evaluate abnormal performance using standard factor models. The goal is to assess whether information embedded in non-holdings predicts future returns.",
+  },
+];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Research — {name}</title>
-  </head>
-  <body>
-    <nav class="header">
-      <a href="/">Home</a>
-      <a href="/cv">C.V.</a>
-      <a class="active" href="/projects">Research</a>
-    </nav>
+<BaseLayout title="Projects">
+  <section class="projects">
+    {projects.map((p) => (
+      <article class="project">
+        <div class="left">
+          <h2 class="title">{p.title}</h2>
+          {p.subtitle && <p class="subtitle">{p.subtitle}</p>}
+          {p.collaborators && <p class="collab">{p.collaborators}</p>}
 
-    <main class="container">
-      <h1 style="font-size:44px; color:#111; margin-bottom:16px;">Research</h1>
-      <p>Add project summaries and links here.</p>
-    </main>
-  </body>
-</html>
+          {p.linkHref && (
+            <p class="linkWrap">
+              <a class="paperLink" href={p.linkHref} target="_blank" rel="noopener">
+                {p.linkText ?? "Link"}
+              </a>
+            </p>
+          )}
+        </div>
+
+        <div class="right">
+          <p class="abstract">
+            <span class="abstractLabel">Abstract:</span> {p.abstract}
+          </p>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <style>
+    .projects {
+      margin-top: 2.5rem;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      column-gap: 3rem;
+      padding: 1.5rem 0;
+    }
+
+    .project + .project {
+      border-top: 1px solid #e9e9e9;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 2.1rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 0.9rem 0 0 0;
+      color: #444;
+      font-size: 1.05rem;
+    }
+
+    .collab {
+      margin: 0.75rem 0 0 0;
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    .linkWrap {
+      margin: 2.5rem 0 0 0;
+    }
+
+    .paperLink {
+      color: #4f7de8;
+      font-weight: 700;
+      text-decoration: underline;
+      font-size: 1.6rem;
+    }
+
+    .abstract {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.9;
+      color: #444;
+    }
+
+    .abstractLabel {
+      font-weight: 700;
+      color: #333;
+    }
+
+    @media (max-width: 900px) {
+      .project {
+        grid-template-columns: 1fr;
+        row-gap: 1.25rem;
+      }
+      .linkWrap {
+        margin-top: 1.25rem;
+      }
+    }
+  </style>
+</BaseLayout>
