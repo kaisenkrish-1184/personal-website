@@ -1,9 +1,9 @@
 ---
 import "../styles/site.css";
 
-const name = "Your Name";
-const line1 = "I am a student interested in finance and asset pricing.";
-const line2 = "My research focuses on institutional demand and market efficiency.";
+const name = "Kaisen Krishnamurthy";
+const line1 = "I am an undergraduate student at the University of Chicago studying mathematics and economics.";
+const line2 = "I'm currently interested in economic development, asset pricing, and the effects of AI on society";
 ---
 
 <html lang="en">
@@ -12,6 +12,7 @@ const line2 = "My research focuses on institutional demand and market efficiency
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{name}</title>
   </head>
+
   <body>
     <nav class="header">
       <a class="active" href="/">Home</a>
@@ -21,7 +22,12 @@ const line2 = "My research focuses on institutional demand and market efficiency
 
     <main class="container">
       <section class="hero">
-        <img class="portrait" src="/profile.jpg" alt={`${name} portrait`} />
+        <!-- Image keeps original dimensions -->
+        <img
+          class="portrait"
+          src="/profile.jpg"
+          alt={`${name} portrait`}
+        />
 
         <div>
           <h1>{name}</h1>
