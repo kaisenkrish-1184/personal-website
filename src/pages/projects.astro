@@ -29,13 +29,20 @@ const projects = [
           {p.subtitle && <p class="subtitle">{p.subtitle}</p>}
           {p.collaborators && <p class="collab">{p.collaborators}</p>}
 
-          {p.linkHref && (
-            <p class="linkWrap">
-              <a class="paperLink" href={p.linkHref} target="_blank" rel="noopener">
-                {p.linkText ?? "Link"}
-              </a>
-            </p>
-          )}
+          {p.links && (
+  <p class="linkWrap">
+    {p.links.map((link) => (
+      <a
+        class="paperLink"
+        href={link.href}
+        target="_blank"
+        rel="noopener"
+      >
+        {link.text}
+      </a>
+    ))}
+  </p>
+)}
         </div>
 
         <div class="right">
