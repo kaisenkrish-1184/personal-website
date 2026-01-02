@@ -15,36 +15,3 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     and the effects of AI on society.
   </p>
 </BaseLayout>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{name}</title>
-  </head>
-
-  <body>
-    <nav class="header">
-      <a class="active" href="/">Home</a>
-      <a href="/cv">C.V.</a>
-      <a href="/projects">Research</a>
-    </nav>
-
-    <main class="container">
-      <section class="hero">
-        <!-- Image keeps original dimensions -->
-        <img
-          class="portrait"
-          src="/profile.jpg"
-          alt={`${name} portrait`}
-        />
-
-        <div>
-          <h1>{name}</h1>
-          <p class="lead">{line1}</p>
-          <p class="sublead">{line2}</p>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
