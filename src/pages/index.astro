@@ -1,24 +1,34 @@
 ---
 import "../styles/site.css";
+
 const name = "Your Name";
+const line1 = "I am a student interested in finance and asset pricing.";
+const line2 = "My research focuses on institutional demand and market efficiency.";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Research — {name}</title>
+    <title>{name}</title>
   </head>
   <body>
     <nav class="header">
-      <a href="/">Home</a>
+      <a class="active" href="/">Home</a>
       <a href="/cv">C.V.</a>
-      <a class="active" href="/projects">Research</a>
+      <a href="/projects">Research</a>
     </nav>
 
     <main class="container">
-      <h1 style="font-size:44px; color:#111; margin-bottom:16px;">Research</h1>
-      <p>Add project summaries and links here.</p>
+      <section class="hero">
+        <img class="portrait" src="/profile.jpg" alt={`${name} portrait`} />
+
+        <div>
+          <h1>{name}</h1>
+          <p class="lead">{line1}</p>
+          <p class="sublead">{line2}</p>
+        </div>
+      </section>
     </main>
   </body>
 </html>
