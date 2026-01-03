@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 const projects = [
   {
     title: "Replication of Daniel Graves “What Lies Beneath Zero: Censoring, Demand Estimation, and Hidden Beliefs”",
+    year: "2025",  
     subtitle: "Replication of empirical results from Graves' JMP + portfolio construction from Hidden Beliefs",
     links: [
       {
@@ -26,6 +26,7 @@ const projects = [
       <article class="project">
         <div class="left">
           <h2 class="title">{p.title}</h2>
+          {p.year && <p class="year">{p.year}</p>}
           {p.subtitle && <p class="subtitle">{p.subtitle}</p>}
           {p.collaborators && <p class="collab">{p.collaborators}</p>}
 
@@ -116,6 +117,13 @@ const projects = [
     .abstractLabel {
       font-weight: 700;
       color: #333;
+    }
+
+    .year {
+      margin: 0.35rem 0 0 0;
+      font-size: 0.95rem;
+      color: #666;
+      font-weight: 500;
     }
 
     @media (max-width: 900px) {
